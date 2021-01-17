@@ -1,0 +1,81 @@
+<div class="container">
+
+<form class="container__form" [formGroup]="register_form" (ngSubmit)="Register(register_form.value)">
+
+    <h2 class="container__form-title">
+       Create User
+    </h2>
+
+    <label for="name" class="container__label">Name: </label>
+    <input formControlName="name" type="text" name="name" class="container__input">
+
+    <div class="alert alert-error" *ngIf="register_form.get('name').hasError('required') && register_form.get('name').touched ">
+        The Name Is Required
+    </div>
+
+    <label for="username" class="container__label">Username: </label>
+    <input formControlName="username" type="text" name="username" class="container__input">
+
+    <div class="alert alert-error" *ngIf="register_form.get('username').hasError('required') && register_form.get('username').touched">
+        The UserName Is Required
+    </div>
+
+    <label for="email" class="container__label">Email: </label>
+    <input formControlName="email" type="email" name="email" class="container__input">
+
+    <div class="alert alert-error" *ngIf="register_form.get('email').hasError('required') && register_form.get('email').touched">
+        The Email Is Required
+    </div>
+
+    <div class="alert alert-error" *ngIf="register_form.get('email').hasError('email') && register_form.get('email').touched">
+        The Emal Is Invalid
+    </div>
+
+    <label for="password" class="container__label">Password: </label>
+    <input formControlName="password" type="password" name="password" class="container__input">
+
+    <div class="alert alert-error" *ngIf="register_form.get('password').hasError('required') && register_form.get('password').touched">
+        The Password Is Required
+    </div>
+
+    <button [disabled]="register_form.invalid" type="submit" class="container__form-btn">
+        Create
+    </button>
+
+    <div *ngIf="error == 'ERROR'" class="alert alert-error">
+        Error At Creating A User
+    </div>
+
+</form>
+
+<form class="container__form" [formGroup]="login_form" (ngSubmit)="Login(login_form.value)">
+
+    <h2 class="container__form-title">
+       Login
+    </h2>
+
+    <label for="email" class="container__label">Email: </label>
+    <input formControlName="email" type="email" name="email" class="container__input">
+
+    <div class="alert alert-error" *ngIf="login_form.get('email').hasError('required') && login_form.get('email').touched">
+        The Email Is Required
+    </div>
+
+    <div class="alert alert-error" *ngIf="login_form.get('email').hasError('email') && login_form.get('email').touched">
+        The Emal Is Invalid
+    </div>
+
+    <label for="password" class="container__label">Password: </label>
+    <input formControlName="password" type="password" name="password" class="container__input">
+
+    <div class="alert alert-error" *ngIf="login_form.get('password').hasError('required') && login_form.get('password').touched">
+        The Password Is Required
+    </div>
+
+    <button [disabled]="login_form.invalid" type="submit" class="container__form-btn">
+        Send
+    </button>
+
+</form>
+
+</div>

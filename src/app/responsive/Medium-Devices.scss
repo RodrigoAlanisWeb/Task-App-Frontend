@@ -1,0 +1,35 @@
+
+// Header
+
+.header{
+    .header__container{
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .header__title{
+            font-size: 4.5vw;
+            margin-top: 10px;
+            .header__author{
+                font-size: 3vw;
+            }
+        }
+        .header__user{
+            flex-direction: column-reverse ;
+            .header__username{
+                font-size: 3.5vw;
+            }
+            .header__list{
+                height: 50px;
+                .header__item{
+                    .header__link{
+                        font-size: 3vw;
+                    }
+                }
+            }
+        
+        }
+    }
+
+    
+}

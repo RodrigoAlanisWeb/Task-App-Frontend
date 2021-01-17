@@ -1,0 +1,81 @@
+
+// Header
+
+.header{
+    display: grid;
+    grid-template-columns: 1fr;
+    .header__container{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;    
+        align-items: center;
+        padding: 0px 20px;
+        box-shadow: 0px 0px  10px #ccc;
+        height: 80px;
+        .header__title{
+            font-weight: 300;
+            font-size: 2.5vw;
+            .header__author{
+                font-size: 1vw;
+            }
+        }
+
+        .header__msg{
+            a{
+                color: #333;
+                text-decoration: none;
+                font-size: 1vw;
+            }
+        }
+
+        .header__user{
+            width: 35%;
+            display: flex;
+            justify-items: center;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            .header__username{
+                font-size: 1.5vw;
+                font-weight: 300;
+                justify-self: end;
+            }
+            .header__list{
+                width: 300px;
+               display: flex;
+               justify-content: space-evenly;
+               height: 80px;
+               align-items: center;
+                .header__item{
+                    list-style: none;
+                    .header__link{
+                        color: black;
+                        text-decoration: none;
+                        font-size: 1vw;
+                    }
+                }
+            }
+        }
+    }
+
+    
+
+}
+
+
+// Responsive
+@media screen and (max-width: 1200px) { 
+    @import './responsive/Extra-Large-Devices.scss';
+}
+
+@media screen and (max-width: 992px) { 
+    @import './responsive/Large-Devices.scss';
+}
+
+@media screen and (max-width: 768px) {
+    @import './responsive/Medium-Devices.scss';
+}
+
+@media screen and (max-width: 576px) {
+    @import './responsive/Small-Devices.scss';
+}

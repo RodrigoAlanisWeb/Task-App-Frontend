@@ -1,1 +1,55 @@
-<p>main works!</p>
+<div class="container">
+
+    <form class="container__form" [formGroup]="create_form" (ngSubmit)="Create(create_form.value)">
+
+        <h2 class="container__form-title">
+           Create Task
+        </h2>
+    
+        <label for="name" class="container__label">Name: </label>
+        <input formControlName="name" type="text" name="name" class="container__input">
+    
+        <div class="alert alert-error" *ngIf="create_form.get('name').hasError('required') && create_form.get('name').touched">
+            The Name Is Required
+        </div>
+    
+        <label for="password" class="container__label">Description: </label>
+        <input formControlName="description" type="text" name="description" class="container__input">
+    
+        <div class="alert alert-error" *ngIf="create_form.get('description').hasError('required') && create_form.get('description').touched">
+            The Description Is Required
+        </div>
+    
+        <button [disabled]="create_form.invalid" type="submit" class="container__form-btn">
+            Create
+        </button>
+    
+    </form>
+
+    <table class="container__table">
+        <tr class="container__tr">
+            <th>
+                Name
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Options
+            </th>
+        </tr>
+    
+        <tr class="container__tr" *ngFor="let t of tasks">
+            <td>
+                {{ t.name }}
+            </td>
+            <td>
+                {{ t.description }}
+            </td>
+            <td>
+
+            </td>
+        </tr>
+    </table>
+
+</div>

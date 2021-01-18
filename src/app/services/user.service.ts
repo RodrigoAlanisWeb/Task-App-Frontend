@@ -30,4 +30,12 @@ export class UserService {
       }
     })
   }
+
+  Profile (token): Observable<any> {
+    return this._http.get(this.api_url + 'api/auth/profile', {
+      headers: {
+        "x-access-token": token
+      }
+    })
+  }
 }

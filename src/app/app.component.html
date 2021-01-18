@@ -9,8 +9,8 @@
         <li class="header__item"><a href="#" class="header__link">Settings</a></li>
         <li class="header__item"><a (click)="LogOut()" href="#" class="header__link">Log Out</a></li>
       </ul>
-      <h2 class="header__username">
-        User Name
+      <h2 class="header__username" *ngIf="user">
+        {{ user.username }}
       </h2>
     </div>
     <h2 class="header__msg" *ngIf="!VerifySession()">
